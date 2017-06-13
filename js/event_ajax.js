@@ -47,7 +47,21 @@ function createAndAppendEvent(e) {
 
 updateEventInfoButton.click(function() {
 	console.log('Updating event info');
+
 	jQuery('#title').val(pickedEvent.name);
-	jQuery('#acf-field-start_datetime').val(pickedEvent.start_time.date);
-	jQuery('#acf-field-end_datetime').val(pickedEvent.end_time.date);
+	jQuery('#content').val(pickedEvent.description);
+
+	jQuery('#acf-field_5898a7eeaf837').val(pickedEvent.start_time.date);
+	jQuery('#acf-field_5898a8b0af838').val(pickedEvent.end_time.date);
+	jQuery('#acf-field_58ac2175c6259').val('https://www.facebook.com/events/' + pickedEvent.id);
+	jQuery('#acf-field_58ac3082524a2').val(pickedEvent.place.name);
+	jQuery('#acf-field_58ac21cfc625a').val(pickedEvent.ticket_uri);
+
+	var location = pickedEvent.place.location;
+	jQuery('.input-address').val(
+		location.street + ' ' +
+		location.zip + ' ' +
+		location.city);
+	jQuery('.input-lat').val(location.latitude);
+	jQuery('.input-lng').val(location.longitude);
 });
