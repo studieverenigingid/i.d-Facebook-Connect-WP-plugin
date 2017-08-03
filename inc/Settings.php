@@ -31,7 +31,9 @@ class Settings
 		{
 				// Set class property
 				$this->options = get_option('svid_facebook_connect_tokens');
-				session_start();
+				if (session_status() == PHP_SESSION_NONE) {
+				    session_start();
+				}
 				global $fb;
 				?>
 				<div class="wrap">

@@ -8,7 +8,9 @@ Author: Floris Jansen
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 date_default_timezone_set('Europe/Amsterdam');
 
