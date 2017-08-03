@@ -12,7 +12,7 @@ session_start();
 
 date_default_timezone_set('Europe/Amsterdam');
 
-require_once(plugin_dir_path(__FILE__) . '/inc/src/Facebook/autoload.php');
+require_once plugin_dir_path(__FILE__) . '/inc/src/Facebook/autoload.php';
 
 $options = get_option('svid_facebook_connect_tokens');
 
@@ -35,19 +35,19 @@ if ( isset($options['fb_app_id']) &&
 /*
  * Options Page
  */
-require_once(plugin_dir_path(__FILE__) . '/inc/Settings.php');
+require_once plugin_dir_path(__FILE__) . '/inc/Settings.php';
 
 /*
  * Callback from Facebook OAuth
  */
-require_once(plugin_dir_path(__FILE__) . '/inc/FB_Callback.php');
+require_once plugin_dir_path(__FILE__) . '/inc/FB_Callback.php';
 
 /*
  * Meta box at event post type edit page
  */
-require_once(plugin_dir_path(__FILE__) . '/inc/Event_Meta_Box.php');
+require_once plugin_dir_path(__FILE__) . '/inc/Event_Meta_Box.php';
 
 /*
  * API to list events
  */
-require_once(plugin_dir_path(__FILE__) . '/inc/FB_Event_List_API.php');
+require_once plugin_dir_path(__FILE__) . '/inc/FB_Event_List_API.php';
