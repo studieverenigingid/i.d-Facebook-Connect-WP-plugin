@@ -17,6 +17,7 @@ date_default_timezone_set('Europe/Amsterdam');
 require_once plugin_dir_path(__FILE__) . '/inc/src/Facebook/autoload.php';
 
 $options = get_option('svid_facebook_connect_tokens');
+define('FB_PLUGIN_NAME', plugin_basename( __FILE__ ));
 
 if ( isset($options['fb_app_id']) &&
 		 isset($options['fb_app_secret'])) {

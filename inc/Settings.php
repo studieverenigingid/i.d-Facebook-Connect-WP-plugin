@@ -11,6 +11,9 @@ class Settings
 		{
 				add_action('admin_menu', array($this, 'add_plugin_page'));
 				add_action('admin_init', array($this, 'page_init'));
+
+				add_filter( 'plugin_action_links_'.FB_PLUGIN_NAME,
+					array($this, 'plugin_add_settings_link') );
 		}
 
 		public function add_plugin_page()
@@ -285,6 +288,13 @@ class Settings
 				echo '</p>';
 			}
 
+		}
+
+
+		public function plugin_add_settings_link( $links ) {
+	    $settings_link = "<a href='options-general.php?page=svid-facebook-connect'>" . __( 'Settings' ) . "</a>";
+	    array_unshift( $links, $settings_link );
+	  	return $links;
 		}
 }
 
