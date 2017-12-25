@@ -51,8 +51,8 @@ updateEventInfoButton.click(function() {
 	jQuery('#title').val(pickedEvent.name);
 	jQuery('#content').val(pickedEvent.description);
 
-	jQuery('#acf-field_5898a7eeaf837').val(pickedEvent.start_time.date);
-	jQuery('#acf-field_5898a8b0af838').val(pickedEvent.end_time.date);
+	jQuery('#acf-field_5898a7eeaf837').val(pickedEvent.start_time.date).next("input").val(pickedEvent.start_time.date);
+	jQuery('#acf-field_5898a8b0af838').val(pickedEvent.end_time.date).next("input").val(pickedEvent.end_time.date);
 	jQuery('#acf-field_58ac2175c6259').val('https://www.facebook.com/events/' + pickedEvent.id);
 	jQuery('#acf-field_58ac3082524a2').val(pickedEvent.place.name);
 	jQuery('#acf-field_58ac21cfc625a').val(pickedEvent.ticket_uri);
